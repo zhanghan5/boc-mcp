@@ -1,0 +1,2903 @@
+[
+  {
+    "method": "GET",
+    "url": "/upmstreeapi/bocPortal/getMenus",
+    "title": "获取 clientId",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/upmstreeapi/login",
+    "title": "登录",
+    "params": [
+      {
+        "name": "typeConfigId",
+        "type": "integer",
+        "location": "body",
+        "required": true,
+        "desc": "类型 id （"
+      },
+      {
+        "name": "userName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "用户名"
+      },
+      {
+        "name": "password",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "密码"
+      },
+      {
+        "name": "clientId",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "clientId"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/upmstreeapi/accessToken?code=1bc3dfa6749c4b8d80703733876b19a0",
+    "title": "获取 token",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "url": "/service-tree",
+    "title": "服务树右侧菜单，有数据权限控制",
+    "params": [
+      {
+        "name": "pType",
+        "type": "string",
+        "location": "query",
+        "required": false,
+        "desc": "pType 父级类型"
+      },
+      {
+        "name": "pid",
+        "type": "integer(int64)",
+        "location": "query",
+        "required": false,
+        "desc": "pid"
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "location": "query",
+        "required": false,
+        "desc": "type"
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "url": "/applications/{id}",
+    "title": "详情",
+    "params": [
+      {
+        "name": "id",
+        "type": "integer(int64)",
+        "location": "path",
+        "required": true,
+        "desc": "应用 id"
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "url": "/bocApplication/projects/list?clusterId=&projectName=&currPag",
+    "title": "列表",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/cluster/v2.3/list",
+    "title": "查询集群",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/cluster/v2.3/listAll",
+    "title": "查询所有集群",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/cluster/v3.0/listBaseInfo",
+    "title": "查询集群基本信息",
+    "params": [
+      {
+        "name": "clusterKind",
+        "type": "varchar(10",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "clusterName",
+        "type": "varchar(80",
+        "location": "body",
+        "required": false,
+        "desc": ") query N 集群名称"
+      },
+      {
+        "name": "currPageNum",
+        "type": "integer",
+        "location": "query",
+        "required": true,
+        "desc": "当前页数"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer",
+        "location": "query",
+        "required": true,
+        "desc": "每页多少 条"
+      },
+      {
+        "name": "sourceType",
+        "type": "varchar(10",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "version",
+        "type": "varchar(25",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "url": "/cluster/v3.0/listMonitorInfo/{clusterId}",
+    "title": "查询集群监控信息",
+    "params": [
+      {
+        "name": "clusterId",
+        "type": "integer(int",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "url": "/platformCluster/v2.3/getClusterState/{clusterId}",
+    "title": "获得集群状态",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/platformCluster/v2.3/getClusterNodes",
+    "title": "获取集群节点",
+    "params": [
+      {
+        "name": "currPageNum",
+        "type": "integer",
+        "location": "query",
+        "required": true,
+        "desc": "当前页数"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer",
+        "location": "query",
+        "required": true,
+        "desc": "每页多少 条"
+      },
+      {
+        "name": "nodeType",
+        "type": "string",
+        "location": "query",
+        "required": false,
+        "desc": "节点类型"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer",
+        "location": "query",
+        "required": true,
+        "desc": "集群 id ===== PAGE"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/platformCluster/v2.3/getPartition",
+    "title": "获取集群分区",
+    "params": [
+      {
+        "name": "clusterId",
+        "type": "integer",
+        "location": "query",
+        "required": true,
+        "desc": "集群 id"
+      },
+      {
+        "name": "currPageNum",
+        "type": "integer",
+        "location": "query",
+        "required": true,
+        "desc": "当前页数"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer",
+        "location": "query",
+        "required": true,
+        "desc": "每页多少条 ===== PAGE"
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "url": "/cluster/v2.3/clusterPartitionResource/{hostIds}",
+    "title": "分区 CPU，MEM 查询",
+    "params": [
+      {
+        "name": "hostIds",
+        "type": "string",
+        "location": "path",
+        "required": true,
+        "desc": "主机 id 的集合"
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "url": "/platformCluster/v2.3/getClusterByEnvId/{envId}",
+    "title": "租户下集群",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/partition/v2.3/list",
+    "title": "查询分区",
+    "params": [
+      {
+        "name": "cl",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "===== PAGE"
+      },
+      {
+        "name": "id",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "page",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "rows",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "status",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "状态"
+      },
+      {
+        "name": "tagId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "标签 Id"
+      },
+      {
+        "name": "m",
+        "type": "number(double)",
+        "location": "body",
+        "required": false,
+        "desc": "===== PAGE"
+      },
+      {
+        "name": "nodeIp",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "ip",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "par",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "===== PAGE"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/partition/v3.3/getDefaultPartition/{clusterId}",
+    "title": "查询集群默认分区",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/partition/v2.3/getPartitionMeta",
+    "title": "条件查询分区信息",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/partition/v2.3/listByKind",
+    "title": "查询普通-默认分区",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/partition/v2.3/nodelist",
+    "title": "分区节点列表",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/partition/v3.3/getAllHost",
+    "title": "查询集群分区下所有节点",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/partition/v2.3/allInfo",
+    "title": "租户集群下所有节点",
+    "params": [
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "集群 Id"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "租户 Id"
+      },
+      {
+        "name": "envIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "envName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "hostIp",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "isAdmin",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "nodeName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "page",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "pageSize",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "每页显示条数"
+      },
+      {
+        "name": "rows",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "searchKey",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "sidx",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "排序字段"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/partition/v2.3/detailByCondition",
+    "title": "获取分区实例信息",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/partition/v2.3/clusterPartition",
+    "title": "查询当前租户下集群可用分区",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "url": "/partitionNetwork/getListByNetWorkName",
+    "title": "获取网络分区",
+    "params": [
+      {
+        "name": "id",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "ips",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "url": "/partitionNetwork/getUnUseredList",
+    "title": "获取可用网络",
+    "params": [
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "query",
+        "required": true,
+        "desc": "clusterId"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/partitionNetwork/v2.3/getNetworkListByEnvId",
+    "title": "获取租户网络",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/strategy/v3.3/list",
+    "title": "扫描策略列表<分页>",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "url": "/report/v3.3/detail/{id}",
+    "title": "扫描报告详情",
+    "params": [
+      {
+        "name": "id",
+        "type": "integer(int32)",
+        "location": "path",
+        "required": true,
+        "desc": "id，报告 id"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/report/v3.3/list",
+    "title": "扫描报告列表<分页>",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryProject",
+    "title": "查询应用",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryProjectAndApplication",
+    "title": "查询应用和服务",
+    "params": [
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "服务 id"
+      },
+      {
+        "name": "applicationIds",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "服务 ids"
+      },
+      {
+        "name": "applicationName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "服务名称"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "集群 id"
+      },
+      {
+        "name": "clusterName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "集群名称"
+      },
+      {
+        "name": "currPageNum",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "当前页"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "租户 id"
+      },
+      {
+        "name": "isTask",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "是否是任务"
+      },
+      {
+        "name": "kind",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "种类"
+      },
+      {
+        "name": "masterIp",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "集群 ip"
+      },
+      {
+        "name": "metricType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "指标类型"
+      },
+      {
+        "name": "order",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "pageSize",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "条数"
+      },
+      {
+        "name": "partitionEnvIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "分区租户 ids"
+      },
+      {
+        "name": "partitionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "分区 id"
+      },
+      {
+        "name": "partitionName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "分区名称"
+      },
+      {
+        "name": "platformType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "平台类型"
+      },
+      {
+        "name": "podRealName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "pod 真实名称"
+      },
+      {
+        "name": "podUid",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "pod uuid"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "应用 id"
+      },
+      {
+        "name": "projectIds",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用 ids"
+      },
+      {
+        "name": "projectName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用名称"
+      },
+      {
+        "name": "prometheusUrl",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "prometheus 地址"
+      },
+      {
+        "name": "prop",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "参数"
+      },
+      {
+        "name": "queryCondition",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "查询场景"
+      },
+      {
+        "name": "queryKey",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "查询 key"
+      },
+      {
+        "name": "queryValue",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "查询值"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "资源类型"
+      },
+      {
+        "name": "tagKey",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "tag key"
+      },
+      {
+        "name": "tagValue",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "tag 值"
+      },
+      {
+        "name": "userId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "用户 id"
+      },
+      {
+        "name": "versionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "版本 id"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryProjectStatus",
+    "title": "查询应用状态",
+    "params": [
+      {
+        "name": "applicationContainerName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "容器名称"
+      },
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "服务 id"
+      },
+      {
+        "name": "applicationName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "服务名称"
+      },
+      {
+        "name": "applicationNamespace",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "命名空间"
+      },
+      {
+        "name": "applicationPodName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "pod 名称"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "集群 id"
+      },
+      {
+        "name": "clusterIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "集群 ids"
+      },
+      {
+        "name": "clusterName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "集群名称"
+      },
+      {
+        "name": "containerId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "容器 id"
+      },
+      {
+        "name": "containerName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "容器名称"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "租户 id"
+      },
+      {
+        "name": "id",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "id"
+      },
+      {
+        "name": "isTask",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "是否是任务"
+      },
+      {
+        "name": "isUnit",
+        "type": "boolean",
+        "location": "body",
+        "required": false,
+        "desc": "是否需要单位"
+      },
+      {
+        "name": "kubernetesVersion",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "k"
+      },
+      {
+        "name": "podId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "podid"
+      },
+      {
+        "name": "podName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "pod 名称"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "应用 id"
+      },
+      {
+        "name": "projectIds",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用 ids"
+      },
+      {
+        "name": "projectName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用名称"
+      },
+      {
+        "name": "projectNames",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用名称"
+      },
+      {
+        "name": "prometheusUrl",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "prometheus 地址"
+      },
+      {
+        "name": "prometheusUrls",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "prometheus 地址"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "资源类型"
+      },
+      {
+        "name": "versionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "版本 id"
+      },
+      {
+        "name": "versionIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "版本 ids"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryBatchProjectMonitor",
+    "title": "查询应用监控数据",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryApplication",
+    "title": "查询服务或任务",
+    "params": [
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "服务 id"
+      },
+      {
+        "name": "applicationIds",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "服务 ids"
+      },
+      {
+        "name": "applicationName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "服务名称"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "集群 id"
+      },
+      {
+        "name": "clusterName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "集群名称 ===== PAGE"
+      },
+      {
+        "name": "currPageNum",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "当前页"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "租户 id"
+      },
+      {
+        "name": "isTask",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "是否是任务"
+      },
+      {
+        "name": "kind",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "种类"
+      },
+      {
+        "name": "masterIp",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "集群 ip"
+      },
+      {
+        "name": "metricType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "查询类型"
+      },
+      {
+        "name": "order",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "订阅"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "条数"
+      },
+      {
+        "name": "partitionEnvIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "分区租户 ids"
+      },
+      {
+        "name": "partitionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "分区 id"
+      },
+      {
+        "name": "partitionName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "分区名称"
+      },
+      {
+        "name": "platformType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "平台类型"
+      },
+      {
+        "name": "podRealName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "pod 真实名称"
+      },
+      {
+        "name": "podUid",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "Pod uuid"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "应用 id"
+      },
+      {
+        "name": "projectIds",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用 ids"
+      },
+      {
+        "name": "projectName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用名称"
+      },
+      {
+        "name": "prometheusUrl",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "prothues 地址"
+      },
+      {
+        "name": "prop",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "参数"
+      },
+      {
+        "name": "queryCondition",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "查询条件"
+      },
+      {
+        "name": "queryKey",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "查询 key"
+      },
+      {
+        "name": "queryValue",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "查询值"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "资源类型"
+      },
+      {
+        "name": "tagKey",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "tagkey"
+      },
+      {
+        "name": "tagValue",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "tag 值"
+      },
+      {
+        "name": "userId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "用户 id"
+      },
+      {
+        "name": "versionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "版本 id"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.6/queryVersion",
+    "title": "版本查询",
+    "params": [
+      {
+        "name": "appId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "服务 id"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "集群 id"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "租户 id"
+      },
+      {
+        "name": "isTask",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "是否是任务"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "条数 ===== PAGE"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "应用 id"
+      },
+      {
+        "name": "versionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "版本 id"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryBatchProjectStatus",
+    "title": "查询服务状态",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/query/v2.3/getNetworkByApplicationId",
+    "title": "获取服务下网络信息",
+    "params": [
+      {
+        "name": "applicationContainerName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "容器名称"
+      },
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "服务 id"
+      },
+      {
+        "name": "applicationName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "服务名称"
+      },
+      {
+        "name": "applicationNamespace",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "命名空间"
+      },
+      {
+        "name": "applicationPodName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "pod 名称"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "集群 id"
+      },
+      {
+        "name": "clusterIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "集群 ids"
+      },
+      {
+        "name": "clusterName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "集群名称"
+      },
+      {
+        "name": "containerId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "容器 id"
+      },
+      {
+        "name": "containerName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "容器名称"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "租户 id"
+      },
+      {
+        "name": "id",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "id"
+      },
+      {
+        "name": "isTask",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "是否是任务"
+      },
+      {
+        "name": "isUnit",
+        "type": "boolean",
+        "location": "body",
+        "required": false,
+        "desc": "是否需要单位 ===== PAGE"
+      },
+      {
+        "name": "kubernetesVersion",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "k"
+      },
+      {
+        "name": "podId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "podid"
+      },
+      {
+        "name": "podName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "pod 名称"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "应用 id"
+      },
+      {
+        "name": "projectIds",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用 ids"
+      },
+      {
+        "name": "projectName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用名称"
+      },
+      {
+        "name": "projectNames",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用名称"
+      },
+      {
+        "name": "prometheusUrl",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "prometheus 地址"
+      },
+      {
+        "name": "prometheusUrls",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "prometheus 地址"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "资源类型"
+      },
+      {
+        "name": "versionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "版本 id"
+      },
+      {
+        "name": "versionIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "版本 ids"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryApplicationMonitor",
+    "title": "查询服务或任务监控数据",
+    "params": [
+      {
+        "name": "applicationContainerName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "服务 controller 名称"
+      },
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "服务 id"
+      },
+      {
+        "name": "applicationName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "服务名称"
+      },
+      {
+        "name": "applicationNamespace",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "服务命名空间"
+      },
+      {
+        "name": "applicationPodName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "服务 pod 名称"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "集群 id"
+      },
+      {
+        "name": "clusterIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "集群 ids"
+      },
+      {
+        "name": "clusterName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "集群名称"
+      },
+      {
+        "name": "containerId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "容器 id"
+      },
+      {
+        "name": "containerName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "容器名称 ===== PAGE"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "租户 id"
+      },
+      {
+        "name": "id",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "id"
+      },
+      {
+        "name": "isTask",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "是否是任务"
+      },
+      {
+        "name": "isUnit",
+        "type": "boolean",
+        "location": "body",
+        "required": false,
+        "desc": "单位"
+      },
+      {
+        "name": "kubernetesVersion",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "K"
+      },
+      {
+        "name": "podId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "Pod ip"
+      },
+      {
+        "name": "podName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "pod 名称"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "应用 id"
+      },
+      {
+        "name": "projectIds",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用 ids"
+      },
+      {
+        "name": "projectName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用名称"
+      },
+      {
+        "name": "projectNames",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用名称"
+      },
+      {
+        "name": "prometheusUrl",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "promethues 地址"
+      },
+      {
+        "name": "prometheusUrls",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "promethues 地址"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "资源类型"
+      },
+      {
+        "name": "versionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "版本 id"
+      },
+      {
+        "name": "versionIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "版本 ids"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryBatchApplicationMonitor",
+    "title": "查询服务监控数据",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/query/v2.3/queryVersionIdByVersionName",
+    "title": "查询版本 Id",
+    "params": [
+      {
+        "name": "appId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "服务 id"
+      },
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "服务 id"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "集群 id"
+      },
+      {
+        "name": "currPageNum",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "当前页"
+      },
+      {
+        "name": "currentVersionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "当前版本 id"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "租户 id"
+      },
+      {
+        "name": "isTask",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "是否是任务"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "条数"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "应用 id"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "资源类型"
+      },
+      {
+        "name": "versionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "版本 id"
+      },
+      {
+        "name": "versionName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "版本名称"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryVersionImageGroupByApplicationId",
+    "title": "查询版本镜像组",
+    "params": [
+      {
+        "name": "appId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "服务 id"
+      },
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "服务 id ===== PAGE"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "集群 id"
+      },
+      {
+        "name": "currPageNum",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "当前页"
+      },
+      {
+        "name": "currentVersionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "当前版本 id"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "租户 id"
+      },
+      {
+        "name": "isTask",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "是否是任务"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "条数"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "应用 id"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "资源类型"
+      },
+      {
+        "name": "versionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "版本 id"
+      },
+      {
+        "name": "versionName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "版本名称"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/map/v1.8/queryYaml",
+    "title": "查询 YAML",
+    "params": [
+      {
+        "name": "kind",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "种类"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "名称"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v2.3/queryDispatchVersionByVersionName",
+    "title": "获取版本下已发布的集群",
+    "params": [
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "服务 id"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "集群 id"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v2.3/queryUnDispatchVersionByVersionName",
+    "title": "获取版本下未发布的集群",
+    "params": [
+      {
+        "name": "appId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "服务 id"
+      },
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "服务 id"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "集群 id ===== PAGE"
+      },
+      {
+        "name": "currPageNum",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "当前页"
+      },
+      {
+        "name": "currentVersionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "当前版本 id"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "租户 id"
+      },
+      {
+        "name": "isTask",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "是否是任务"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "条数"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "应用 id"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "资源类型"
+      },
+      {
+        "name": "versionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "版本 id"
+      },
+      {
+        "name": "versionName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "版本名称"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v2.3/queryImageGroup",
+    "title": "ImageGroup 查询",
+    "params": [
+      {
+        "name": "appId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "服务 id"
+      },
+      {
+        "name": "applicationName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "服务名称"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "应用 id"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "资源类型"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryContainer",
+    "title": "查询容器",
+    "params": [
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "服务 id"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "集群 id"
+      },
+      {
+        "name": "containerId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "容器 id ===== PAGE"
+      },
+      {
+        "name": "containerName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "容器名称"
+      },
+      {
+        "name": "currPageNum",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "当前页"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "租户 id"
+      },
+      {
+        "name": "hostIp",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "主机 ip"
+      },
+      {
+        "name": "hostName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "主机名称"
+      },
+      {
+        "name": "imageGroupId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "镜像分组 id"
+      },
+      {
+        "name": "imageNameTag",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "镜像 tag"
+      },
+      {
+        "name": "imageVerArray",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      },
+      {
+        "name": "masterIp",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "集群 ip"
+      },
+      {
+        "name": "namespaces",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "命名空间"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "每页数"
+      },
+      {
+        "name": "partitionName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "分区名称"
+      },
+      {
+        "name": "platformType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "平台类型"
+      },
+      {
+        "name": "podId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "实例 id"
+      },
+      {
+        "name": "podName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "pod 名称"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "应用 id"
+      },
+      {
+        "name": "projectIdList",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "应用 id 集合"
+      },
+      {
+        "name": "projectIds",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用 ids"
+      },
+      {
+        "name": "projectName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用名称"
+      },
+      {
+        "name": "prometheusUrl",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "prometheus 地址"
+      },
+      {
+        "name": "realName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "真实名称"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "资源类型"
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "类型"
+      },
+      {
+        "name": "versionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "版本"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryPodMonitor",
+    "title": "查询容器实例监控数据",
+    "params": [
+      {
+        "name": "applicationContainerName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "服务名称"
+      },
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "服务 id"
+      },
+      {
+        "name": "applicationName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "服务名称"
+      },
+      {
+        "name": "applicationNamespace",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "应用名称"
+      },
+      {
+        "name": "applicationPodName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "实例名称"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "集群 id"
+      },
+      {
+        "name": "clusterIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "集群 ids"
+      },
+      {
+        "name": "clusterName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "集群名称"
+      },
+      {
+        "name": "containerId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "容器 id"
+      },
+      {
+        "name": "containerName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "容器名称"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "租户 id"
+      },
+      {
+        "name": "id",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "id"
+      },
+      {
+        "name": "isTask",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "是否是任务"
+      },
+      {
+        "name": "isUnit",
+        "type": "boolean",
+        "location": "body",
+        "required": false,
+        "desc": "是否需要单位"
+      },
+      {
+        "name": "kubernetesVersion",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "kubernetes 版本"
+      },
+      {
+        "name": "podId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "podid"
+      },
+      {
+        "name": "podName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "pod 名称"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "应用 id"
+      },
+      {
+        "name": "projectIds",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用 ids"
+      },
+      {
+        "name": "projectName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用名称"
+      },
+      {
+        "name": "projectNames",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用名称"
+      },
+      {
+        "name": "prometheusUrl",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "Prometneus 地址 ===== PAGE"
+      },
+      {
+        "name": "prometheusUrls",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "Prometneus 地址"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "资源类型"
+      },
+      {
+        "name": "versionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "版本 id"
+      },
+      {
+        "name": "versionIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "版本 ids"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryBatchContainerMonitor",
+    "title": "查询容器监控数据",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryPod",
+    "title": "查询实例",
+    "params": [
+      {
+        "name": "applicationContainerName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "容器名称"
+      },
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "服务 id"
+      },
+      {
+        "name": "applicationNamespace",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "命名空间"
+      },
+      {
+        "name": "applicationPodName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "pod 名称"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "集群 id ===== PAGE"
+      },
+      {
+        "name": "containerName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "容器名称"
+      },
+      {
+        "name": "currPageNum",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "当前页"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "租户 id"
+      },
+      {
+        "name": "hostName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "所属节点"
+      },
+      {
+        "name": "isTask",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "是否是任务"
+      },
+      {
+        "name": "masterIp",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "集群 ip"
+      },
+      {
+        "name": "namespace",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "命名空间"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "每页数"
+      },
+      {
+        "name": "partitionEnvIds",
+        "type": "array",
+        "location": "body",
+        "required": false,
+        "desc": "分区租户 ids"
+      },
+      {
+        "name": "partitionId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "分区 id"
+      },
+      {
+        "name": "partitionName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "分区名称"
+      },
+      {
+        "name": "platformDefaultEnvId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "平台默认租户 id"
+      },
+      {
+        "name": "podIp",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "实例 IPzz"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "应用 id"
+      },
+      {
+        "name": "projectIds",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "应用 ids"
+      },
+      {
+        "name": "prometheusUrl",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "Prometheus 地址"
+      },
+      {
+        "name": "realName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "真实名称"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "资源类型"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "状态"
+      },
+      {
+        "name": "tagKey",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "tag key"
+      },
+      {
+        "name": "tagValue",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "tag 值"
+      },
+      {
+        "name": "userId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "用户 id"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryBatchPodMonitor",
+    "title": "查询实例监控数据",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/query/v3.0/queryKubectlPods",
+    "title": "查询 kubectlPod",
+    "params": [
+      {
+        "name": "masterIp",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "集群 ip"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "资源类型"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/service/v2.3/checkService",
+    "title": "查看内部负载是否存在",
+    "params": [
+      {
+        "name": "applicationId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "服务 id"
+      },
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "集群 id"
+      },
+      {
+        "name": "currPageNum",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "当前页"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "租户 id"
+      },
+      {
+        "name": "id",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "id"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "名称"
+      },
+      {
+        "name": "namespace",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "所属应用"
+      },
+      {
+        "name": "oldPort",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "旧端口"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "页大小"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "应用 id"
+      },
+      {
+        "name": "port",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "端口"
+      },
+      {
+        "name": "service",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "svc ===== PAGE"
+      },
+      {
+        "name": "serviceId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "svc id"
+      },
+      {
+        "name": "serviceName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "svc 名称"
+      },
+      {
+        "name": "servicePort",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "svc 端口"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/service/v2.3/getServiceByApplicationId",
+    "title": "根据服务 id 获取内部负载",
+    "params": [
+      {
+        "name": "masterMap",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "主机 id 对应 ip"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "应用 id"
+      },
+      {
+        "name": "projectName",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "应用名称"
+      },
+      {
+        "name": "platformType",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "applicationName",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "应用名称"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v2.3/queryServiceByApplicationId",
+    "title": "获取服务下内部负载",
+    "params": [
+      {
+        "name": "applicationName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "服务名称"
+      },
+      {
+        "name": "masterIp",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "集群 ip"
+      },
+      {
+        "name": "masterMap",
+        "type": "object",
+        "location": "body",
+        "required": true,
+        "desc": "集群 ipMap"
+      },
+      {
+        "name": "platformType",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "平台类型"
+      },
+      {
+        "name": "projectId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "应用 id"
+      },
+      {
+        "name": "projectName",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "应用名称"
+      },
+      {
+        "name": "resourceType",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "资源类型"
+      },
+      {
+        "name": "serviceName",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "svc 名称"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/service/v2.3/listServiceByPage",
+    "title": "获分页获取内部负载",
+    "params": [
+      {
+        "name": "clusterId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "集群 id"
+      },
+      {
+        "name": "envId",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "租户 id"
+      },
+      {
+        "name": "id",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": "id"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "名称"
+      },
+      {
+        "name": "namespace",
+        "type": "string",
+        "location": "body",
+        "required": true,
+        "desc": "所属应用"
+      },
+      {
+        "name": "oldPort",
+        "type": "string",
+        "location": "body",
+        "required": false,
+        "desc": "旧端口"
+      },
+      {
+        "name": "pageSize",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": true,
+        "desc": "页大小"
+      },
+      {
+        "name": "port",
+        "type": "integer(int32)",
+        "location": "body",
+        "required": false,
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "url": "/query/v1.8/queryService",
+    "title": "内部负载查询",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "url": "/secret/v2.3/list",
+    "title": "查询 secret 列表",
+    "params": []
+  }
+]

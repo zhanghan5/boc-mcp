@@ -1,0 +1,11 @@
+base_url: "https://boc.example.com"
+username: "admin"
+password: "change-me"
+verify_ssl: true
+request_timeout: 30
+max_retries: 3
+log_level: "INFO"
+system_id: "1"
+mcp:
+  host: "0.0.0.0"
+  port: 8000

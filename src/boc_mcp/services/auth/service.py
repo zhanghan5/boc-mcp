@@ -1,4 +1,5 @@
-﻿from __future__ import annotations
+from __future__ import annotations
+
 from boc_mcp.auth.token_manager import TokenManager
 from boc_mcp.services.auth.models import AuthStatus
 

@@ -1,7 +1,8 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from collections.abc import AsyncIterator
 from typing import Any
+
 from boc_mcp.client.boc_client import BocApiClient
 from boc_mcp.client.pagination import paginate
 
@@ -25,5 +26,6 @@ class BaseService:
     async def _list(self, path: str, *, page_size: int = 20, **kwargs: Any) -> AsyncIterator[dict]:
         async def fetch(**kw: Any) -> dict:
             return await self._client.post(path, json=kw)
+
         async for item in paginate(fetch, size=page_size, **kwargs):
             yield item

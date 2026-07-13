@@ -1,5 +1,7 @@
-﻿from __future__ import annotations
+from __future__ import annotations
+
 from pydantic import BaseModel
+
 
 class AuthStatus(BaseModel):
     logged_in: bool

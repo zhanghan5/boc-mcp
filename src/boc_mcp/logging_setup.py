@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import logging
@@ -17,10 +17,30 @@ class _JsonFormatter(logging.Formatter):
             "logger": record.name,
             "message": record.getMessage(),
         }
-        skip = {"args","asctime","created","exc_info","exc_text","filename","funcName",
-                "levelname","levelno","lineno","module","msecs","message","msg","name",
-                "pathname","process","processName","relativeCreated","stack_info","thread",
-                "threadName"}
+        skip = {
+            "args",
+            "asctime",
+            "created",
+            "exc_info",
+            "exc_text",
+            "filename",
+            "funcName",
+            "levelname",
+            "levelno",
+            "lineno",
+            "module",
+            "msecs",
+            "message",
+            "msg",
+            "name",
+            "pathname",
+            "process",
+            "processName",
+            "relativeCreated",
+            "stack_info",
+            "thread",
+            "threadName",
+        }
         for k, v in record.__dict__.items():
             if k not in skip:
                 payload[k] = v

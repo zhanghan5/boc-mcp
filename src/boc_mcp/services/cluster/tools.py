@@ -1,6 +1,9 @@
-﻿from __future__ import annotations
+from __future__ import annotations
+
 from typing import Any
+
 from mcp.server.fastmcp import FastMCP
+
 from boc_mcp.client.boc_client import BocApiClient
 from boc_mcp.middleware import wrap_tool_errors
 from boc_mcp.services.cluster.service import ClusterService
@@ -11,8 +14,9 @@ def register_tools(mcp: FastMCP, client: BocApiClient, **_: Any) -> None:
 
     @mcp.tool(description="查询博云平台集群列表，可按名称关键字过滤，支持分页。")
     @wrap_tool_errors
-    async def boc_cluster_list(keyword: str | None = None, page: int = 1,
-                                page_size: int = 20) -> dict:
+    async def boc_cluster_list(
+        keyword: str | None = None, page: int = 1, page_size: int = 20
+    ) -> dict:
         r = await svc.list_clusters(keyword=keyword, page=page, page_size=page_size)
         return r.model_dump(by_alias=True)
 
@@ -23,11 +27,22 @@ def register_tools(mcp: FastMCP, client: BocApiClient, **_: Any) -> None:
 
     @mcp.tool(description="查询集群基本信息，可按类型、名称、版本过滤，支持分页。")
     @wrap_tool_errors
-    async def boc_cluster_list_base_info(cluster_kind: str | None = None,
-            cluster_name: str | None = None, source_type: str | None = None,
-            version: str | None = None, page: int = 1, page_size: int = 20) -> dict:
-        r = await svc.list_base_info(cluster_kind=cluster_kind, cluster_name=cluster_name,
-            source_type=source_type, version=version, page=page, page_size=page_size)
+    async def boc_cluster_list_base_info(
+        cluster_kind: str | None = None,
+        cluster_name: str | None = None,
+        source_type: str | None = None,
+        version: str | None = None,
+        page: int = 1,
+        page_size: int = 20,
+    ) -> dict:
+        r = await svc.list_base_info(
+            cluster_kind=cluster_kind,
+            cluster_name=cluster_name,
+            source_type=source_type,
+            version=version,
+            page=page,
+            page_size=page_size,
+        )
         return r.model_dump(by_alias=True)
 
     @mcp.tool(description="查询指定集群的监控信息。")
@@ -42,21 +57,29 @@ def register_tools(mcp: FastMCP, client: BocApiClient, **_: Any) -> None:
 
     @mcp.tool(description="分页查询指定集群下的节点列表。")
     @wrap_tool_errors
-    async def boc_cluster_list_nodes(cluster_id: int, node_type: str | None = None,
-            page: int = 1, page_size: int = 20) -> dict:
-        r = await svc.list_nodes(cluster_id=cluster_id, node_type=node_type, page=page,
-                                 page_size=page_size)
+    async def boc_cluster_list_nodes(
+        cluster_id: int, node_type: str | None = None, page: int = 1, page_size: int = 20
+    ) -> dict:
+        r = await svc.list_nodes(
+            cluster_id=cluster_id, node_type=node_type, page=page, page_size=page_size
+        )
         return r.model_dump(by_alias=True)
 
     @mcp.tool(description="分页查询指定集群的分区列表。")
     @wrap_tool_errors
-    async def boc_cluster_list_partitions(cluster_id: int, page: int = 1,
-            page_size: int = 20) -> dict:
-        r = await svc.list_platform_partitions(cluster_id=cluster_id, page=page,
-                                                page_size=page_size)
+    async def boc_cluster_list_partitions(
+        cluster_id: int, page: int = 1, page_size: int = 20
+    ) -> dict:
+        r = await svc.list_platform_partitions(
+            cluster_id=cluster_id, page=page, page_size=page_size
+        )
         return r.model_dump(by_alias=True)
 
-    @mcp.tool(description="查询指定 hostId 列表的分区 CPU/内存资源使用情况，hostIds 为逗号分隔的 id 字符串。")
+    @mcp.tool(
+        description=(
+            "查询指定 hostId 列表的分区 CPU/内存资源使用情况，hostIds 为逗号分隔的 id 字符串。"
+        )
+    )
     @wrap_tool_errors
     async def boc_cluster_get_partition_resource(host_ids: str) -> dict:
         r = await svc.get_partition_resource(host_ids)

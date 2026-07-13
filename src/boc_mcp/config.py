@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import os
 from pathlib import Path
@@ -74,8 +74,16 @@ def load_config() -> AppConfig:
     if yaml_path:
         yd = _load_yaml(yaml_path)
         # base-level fields
-        for key in ("base_url", "username", "password", "verify_ssl",
-                    "request_timeout", "max_retries", "log_level", "system_id"):
+        for key in (
+            "base_url",
+            "username",
+            "password",
+            "verify_ssl",
+            "request_timeout",
+            "max_retries",
+            "log_level",
+            "system_id",
+        ):
             if not _env_has(key) and key in yd:
                 object.__setattr__(cfg, key, yd[key])
         if "mcp" in yd and isinstance(yd["mcp"], dict):

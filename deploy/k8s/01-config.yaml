@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: boc-mcp-credentials
+  namespace: boc-mcp
+  labels:
+    app.kubernetes.io/name: boc-mcp
+type: Opaque
+stringData:
+  # 填写博云平台登录用户名/密码；建议用 SealedSecret/ExternalSecret 替换明文
+  username: "admin"
+  password: "CHANGE_ME"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: boc-mcp-config
+  namespace: boc-mcp
+  labels:
+    app.kubernetes.io/name: boc-mcp
+data:
+  # 博云平台地址（必填）
+  BOC_BASE_URL: "https://boc.your-company.com"
+  BOC_SYSTEM_ID: "1"
+  BOC_VERIFY_SSL: "true"
+  BOC_REQUEST_TIMEOUT: "30"
+  BOC_MAX_RETRIES: "3"
+  BOC_LOG_LEVEL: "INFO"
+  BOC_MCP__HOST: "0.0.0.0"
+  BOC_MCP__PORT: "8000"

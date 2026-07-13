@@ -1,22 +1,18 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import functools
-from typing import Any, Callable
+from collections.abc import Callable
+from typing import Any
 
 from mcp.shared.exceptions import McpError
 from mcp.types import ErrorData
 
 from boc_mcp.client.errors import (
-    APIError,
     AuthError,
     BadRequestError,
-    BocMcpError,
     ConflictError,
     ForbiddenError,
-    NetworkError,
     NotFoundError,
-    RequestTimeoutError,
-    ServerError,
 )
 
 INVALID_PARAMS = -32602
@@ -35,10 +31,6 @@ def boc_error_to_mcp(err: Exception) -> McpError:
         code = PERMISSION_DENIED
     elif isinstance(err, AuthError):
         code = UNAUTHORIZED
-    elif isinstance(err, (ServerError, NetworkError, RequestTimeoutError)):
-        code = INTERNAL_ERROR
-    elif isinstance(err, BocMcpError):
-        code = INTERNAL_ERROR
     else:
         code = INTERNAL_ERROR
     message = getattr(err, "message", str(err)) or str(err)
@@ -54,4 +46,5 @@ def wrap_tool_errors(fn: Callable[..., Any]) -> Callable[..., Any]:
             raise
         except Exception as e:
             raise boc_error_to_mcp(e) from e
+
     return wrapper

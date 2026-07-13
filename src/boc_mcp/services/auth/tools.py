@@ -1,14 +1,18 @@
-﻿from __future__ import annotations
+from __future__ import annotations
+
 from typing import Any
+
 from mcp.server.fastmcp import FastMCP
-from boc_mcp.client.boc_client import BocApiClient
+
 from boc_mcp.auth.token_manager import TokenManager
+from boc_mcp.client.boc_client import BocApiClient
 from boc_mcp.middleware import wrap_tool_errors
 from boc_mcp.services.auth.service import AuthService
 
 
-def register_tools(mcp: FastMCP, client: BocApiClient,
-                   token_manager: TokenManager | None = None) -> None:
+def register_tools(
+    mcp: FastMCP, client: BocApiClient, token_manager: TokenManager | None = None
+) -> None:
     svc = AuthService(token_manager) if token_manager else None
 
     @mcp.tool(description="查询博云平台登录状态：是否已登录、登录用户、systemId、token 过期时间。")

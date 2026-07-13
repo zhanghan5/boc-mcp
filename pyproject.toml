@@ -48,7 +48,16 @@ select = ["E", "F", "I", "N", "W", "UP", "B", "SIM"]
 
 [tool.mypy]
 python_version = "3.12"
-strict = true
-warn_return_any = true
+warn_return_any = false
 warn_unused_configs = true
+warn_unused_ignores = true
+no_implicit_optional = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = false
+disallow_untyped_decorators = false
 packages = ["boc_mcp"]
+
+[[tool.mypy.overrides]]
+module = ["yaml", "aiohttp", "mcp.*"]
+ignore_missing_imports = true

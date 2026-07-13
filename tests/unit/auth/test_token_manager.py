@@ -1,5 +1,7 @@
-﻿import asyncio
+import asyncio
+
 import pytest
+
 from boc_mcp.auth.token_manager import TokenManager, TokenSet
 from boc_mcp.client.errors import AuthError
 from boc_mcp.config import AppConfig
@@ -18,15 +20,28 @@ class FakeClient:
     async def get(self, path, *, params=None):
         self.get_calls += 1
         if path.startswith("/upmstreeapi/bocPortal/getMenus"):
-            return {"code": 100000, "data": {"isValid": False,
-                "redirectLoginUrl": f"http://host/?clientId={self.client_id}"},
-                "state": "error", "message": "token required"}
+            return {
+                "code": 100000,
+                "data": {
+                    "isValid": False,
+                    "redirectLoginUrl": f"http://host/?clientId={self.client_id}",
+                },
+                "state": "error",
+                "message": "token required",
+            }
         if path.startswith("/upmstreeapi/accessToken"):
             if self.fail_on_call and self.get_calls == self.fail_on_call:
                 return {"state": "error", "message": "token expired", "code": 401, "data": None}
-            return {"state": "success", "code": 200, "data": {
-                "token": self.token, "refreshToken": self.refresh,
-                "expiredTime": "2026-07-10T12:00:00.000+0800", "sessionId": "s"}}
+            return {
+                "state": "success",
+                "code": 200,
+                "data": {
+                    "token": self.token,
+                    "refreshToken": self.refresh,
+                    "expiredTime": "2026-07-10T12:00:00.000+0800",
+                    "sessionId": "s",
+                },
+            }
         return {}
 
     async def post(self, path, *, json=None):
@@ -38,8 +53,11 @@ class FakeClient:
             assert json["userName"]
             assert json["password"]
             assert json["clientId"] == self.client_id
-            return {"state": "success", "code": 200,
-                    "data": {"code": self.code, "id": 1, "name": json["userName"]}}
+            return {
+                "state": "success",
+                "code": 200,
+                "data": {"code": self.code, "id": 1, "name": json["userName"]},
+            }
         return {}
 
 
@@ -88,7 +106,8 @@ async def test_invalidate_relogs():
     c = FakeClient()
     tm = TokenManager(make_cfg(), c)
     await tm.get_token()
-    c.post_calls = 0; c.get_calls = 0
+    c.post_calls = 0
+    c.get_calls = 0
     tm.invalidate()
     await tm.get_token()
     assert c.post_calls == 1
@@ -99,7 +118,8 @@ async def test_concurrent_invalidate_only_relogs_once():
     c = FakeClient()
     tm = TokenManager(make_cfg(), c)
     await tm.get_token()
-    c.post_calls = 0; c.get_calls = 0
+    c.post_calls = 0
+    c.get_calls = 0
     tm.invalidate()
     results = await asyncio.gather(*[tm.get_token() for _ in range(10)])
     assert all(r.token == "t" for r in results)

@@ -1,5 +1,7 @@
-﻿from __future__ import annotations
-from pydantic import BaseModel, Field, ConfigDict, alias_generators
+from __future__ import annotations
+
+from pydantic import BaseModel, ConfigDict, Field, alias_generators
+
 
 class _Base(BaseModel):
     model_config = ConfigDict(
@@ -7,6 +9,7 @@ class _Base(BaseModel):
         alias_generator=alias_generators.to_camel,
         populate_by_name=True,
     )
+
 
 class ClusterSummary(_Base):
     id: int | None = None
@@ -17,8 +20,10 @@ class ClusterSummary(_Base):
     master_ip: str | None = None
     master_port: int | None = None
 
+
 class ClusterDetail(ClusterSummary):
     node_count: int | None = None
+
 
 class ClusterNode(_Base):
     id: int | None = None
@@ -27,10 +32,12 @@ class ClusterNode(_Base):
     status: str | None = None
     roles: list[str] = Field(default_factory=list)
 
+
 class ClusterPartition(_Base):
     id: int | None = None
     name: str = ""
     cluster_id: int | None = None
+
 
 class PartitionResource(_Base):
     host_ids: str = ""

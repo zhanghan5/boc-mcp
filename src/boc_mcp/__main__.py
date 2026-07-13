@@ -1,4 +1,4 @@
-﻿from boc_mcp.server import run
+from boc_mcp.server import run
 
 if __name__ == "__main__":
     run()
